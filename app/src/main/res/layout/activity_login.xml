@@ -6,25 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:ems="10"
-        android:hint="Insira a senha"
-        android:inputType="textPersonName"
-        android:textColorHighlight="@color/pink_color"
-        android:textColorLink="@color/pink_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
@@ -57,7 +38,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
-        android:hint="Insira o nome de usuário"
+        android:hint="Insira seu nome de usuário"
         android:inputType="textPersonName"
         android:textColorHighlight="@color/pink_color"
         android:textColorLink="@color/pink_color"
@@ -71,7 +52,7 @@
         android:layout_height="55dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:fontFamily="@font/patua_one"
@@ -85,5 +66,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:ems="10"
+        android:hint="Insira sua senha"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
