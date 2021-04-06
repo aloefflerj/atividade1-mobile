@@ -1,13 +1,10 @@
 package com.andersonloeffler.atividade1;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
+import com.andersonloeffler.atividade1.adapter.AlbumAdapter;
+import com.andersonloeffler.atividade1.adapter.TodoAdapter;
 import com.andersonloeffler.atividade1.models.Album;
-import com.andersonloeffler.atividade1.models.Comment;
-import com.andersonloeffler.atividade1.models.Todo;
-import com.andersonloeffler.atividade1.models.User;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -16,11 +13,10 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -72,6 +68,14 @@ public class AlbumsActivity
                 );
                 albums.add(obj);
             }
+
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            RecyclerView rvAlbums = findViewById(R.id.rvAlbums);
+            rvAlbums.setLayoutManager(llm);
+            AlbumAdapter albumAdapter = new AlbumAdapter(albums);
+            rvAlbums.setAdapter(albumAdapter);
+
+            /*
             Toast.makeText(
                     getApplicationContext(),
                     "Quantidade: " + albums.size(),
@@ -91,11 +95,10 @@ public class AlbumsActivity
 
                         intent.putExtra("objAlbum", album);
                         startActivity(intent);
-//                        Toast.makeText(getApplicationContext(), "oi", Toast.LENGTH_SHORT).show();
                     }
                 });
                 linearLayout.addView(btn);
-            }
+            }*/
         }catch (JSONException e) {
             Log.e("Erro: ", e.getMessage());
             e.printStackTrace();

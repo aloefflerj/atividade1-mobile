@@ -12,21 +12,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/pink_color" />
+        android:textColor="@color/green_color" />
 
     <TextView
         android:id="@+id/tvIdUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/pink_color" />
+        android:textColor="@color/green_color" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/pink_color"
+        android:textColor="@color/green_color"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -35,5 +35,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Completado"
-        android:textColor="@color/pink_color" />
+        android:textColor="@color/green_color" />
 </LinearLayout>

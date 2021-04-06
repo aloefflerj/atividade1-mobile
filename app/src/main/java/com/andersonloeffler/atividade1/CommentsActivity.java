@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.andersonloeffler.atividade1.adapter.CommentAdapter;
 import com.andersonloeffler.atividade1.models.Comment;
 import com.andersonloeffler.atividade1.models.Todo;
 import com.andersonloeffler.atividade1.models.User;
@@ -15,6 +16,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
@@ -78,6 +81,13 @@ public class CommentsActivity
                     "Quantidade: " + comments.size(),
                     Toast.LENGTH_SHORT
             ).show();
+
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            RecyclerView rvComments = findViewById(R.id.rvComments);
+            rvComments.setLayoutManager(llm);
+            CommentAdapter commentAdapter = new CommentAdapter(comments);
+            rvComments.setAdapter(commentAdapter);
+            /*
             LinearLayout linearLayout = findViewById(R.id.layoutVerticalItemsComments);
             for(Comment obj1: comments){
                 Button btn = new Button(this);
@@ -96,7 +106,7 @@ public class CommentsActivity
                     }
                 });
                 linearLayout.addView(btn);
-            }
+            }*/
         }catch (JSONException e) {
             Log.e("Erro: ", e.getMessage());
             e.printStackTrace();

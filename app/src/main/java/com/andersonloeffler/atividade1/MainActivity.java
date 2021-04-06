@@ -124,45 +124,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onResponse(JSONArray response) {
-        try{
-            for(int i = 0; i < response.length(); i++){
-                JSONObject json = response.getJSONObject(i);
-                Todo obj = new Todo(
-                        json.getInt("userId"),
-                        json.getInt("id"),
-                        json.getString("title"),
-                        json.getBoolean("completed")
-                        );
-                todos.add(obj);
-            }
-            //Mostra quantidade no toast
-            Toast.makeText(
-                    this,
-                    "Quantidade: " + todos.size(),
-                          Toast.LENGTH_SHORT
-                    ).show();
-            LinearLayout linearLayout = findViewById(R.id.layoutVerticalItemsTodo);
-            for(Todo obj1: todos){
-                Button btn = new Button(this);
-                btn.setText(obj1.getTitle());
-                btn.setTag(obj1);
-                btn.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Button btn = (Button) v;
-                        Todo todo = (Todo) btn.getTag();
-                        Intent intent = new Intent(getApplicationContext(), TodoActivity.class);
-
-                        intent.putExtra("objTodo", todo);
-                        startActivity(intent);
-                    }
-                });
-            }
-
-        } catch (JSONException e) {
-            Log.e("Erro: ", e.getMessage());
-            e.printStackTrace();
-        }
 
     }
 
